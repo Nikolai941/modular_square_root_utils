@@ -1,0 +1,14 @@
+[project]
+name = "modular-square-root-utils"
+version = "0.1.0"
+description = "Finds a square root modulo an odd prime, or None if no root exists."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
