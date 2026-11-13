@@ -30,3 +30,10 @@ When a residue has two roots, `r` and `p - r`, the function returns the smaller 
 
 - `modular_sqrt(a: int, p: int) -> int | None` — returns a root of `a` modulo the odd prime `p`, or `None` if `a` is a non-residue. Returns `0` when `a` is `0` modulo `p`. Raises `ValueError` if `p <= 2`.
 - `legendre_symbol(a: int, p: int) -> int` — returns `1`, `-1`, or `0` following Euler's criterion. Raises `ValueError` if `p <= 2`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
